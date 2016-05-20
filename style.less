@@ -1,6 +1,6 @@
 /*!
     Barnetts Deniliquin
-    Version: 0.1
+    Version: 0.2
 */
 
 
@@ -64,6 +64,9 @@ html {
 body {
     background-color: @color-background;
     font-family: @font-family-primary;
+    background-image: url(img/background.jpg);
+    .background-cover();
+    background-attachment: fixed;
 }
 
 html, body {
@@ -77,34 +80,35 @@ h4,
 h5, 
 h6 {
     color: @color-white;
-    margin: 0 0 30px 0;
+    margin: 0;
     padding: 0;
 }
 
 h1 {
     font-weight: bold;
-    font-size: 64px;
-    letter-spacing: -2px;
-    line-height: 87px;
-    margin-bottom: 15px;
+    font-size: 46px;
+    letter-spacing: -1px;
+    line-height: 62px;
+    display: inline-block;
     span {
         font-weight: 600;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 19px;
         display: block;
         text-align: right;
         letter-spacing: 0;
-        top: -15px;
-        right: 9px;
+        top: -12px;
+        right: 1px;
         position: relative;
     }
 }
 
 h2 {
     font-weight: 300;
-    font-size: 30px;
-    line-height: 42px;
-    letter-spacing: -0.3px;
+    font-size: 22px;
+    line-height: 35px;
+    max-width: 420px;
+    margin: 0 auto;
     margin-bottom: 60px;
 }
 
@@ -171,8 +175,6 @@ hr {
     height: 100%;
     width: 100%;
     float: left;
-    background-image: url(img/background.jpg);
-    .background-cover();
     a {
         border-bottom: 1px solid @color-off-white;
     }
@@ -195,12 +197,8 @@ hr {
 
 .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
-}
-
-.container-full {
-    width: 100%;
 }
 
 .call-now {
@@ -210,21 +208,34 @@ hr {
         font-size: 30px;
         line-height: 42px;
         font-weight: 600;
+        margin: 0;
         padding: 30px 0;
     }
 }
 
 .services {
     margin-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
     .service {
+        position: relative;
+        display: block;
         width: 50%;
         float: left;
+        text-align: left;
+        margin-bottom: 20px;
         img {
             
         }
         p {
-            margin-top: 10px;
-            margin-bottom: 25px;
+            margin: 0;
+            padding-left: 110px;
+            transform: translateY(-50%);
+            top: 50%;
+            position: absolute;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
         }
     }
 }
@@ -233,39 +244,51 @@ hr {
    Responsive
    -------------------------------------------------------------- */
 
-/* Medium Devices, Desktops */
+
 @media only screen and (max-width : 1199px) {
 
 }
 
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 991px), only screen and (max-height : 900px)  {
-    
-    #content {
-        
-    }
 
+@media only screen and (max-width : 991px) {
+
+}
+
+
+@media only screen and (max-height : 740px) {
     .center {
-        top: auto;
+        top: 60px;
         transform: translateY(0);
         -ms-transform: translateY(0);
         -moz-transform: translateY(0);
         -webkit-transform: translateY(0);
     }
+    .container {
+        padding: 0 0 40px 0;
+    }
+}
+
+
+@media only screen and (max-width : 767px) {
+
+    #content {
+        
+    }
+
+    .center {
+        
+    }
 
     .container {
-        max-width: 460px;
-        padding: 5px 30px;
+        max-width: 100%;
     }
 
     h1 {
         margin-top: 30px;
-        font-size: 33px;
-        letter-spacing: -1px;
+        font-size: 40px;
+        line-height: 40px;
         span {
-            text-align: center;
-            top: -25px;
-            right: auto;
+            top: -5px;
         }
     }
 
@@ -283,6 +306,7 @@ hr {
         p {
             font-size: 23px;
             line-height: 32px;
+            padding: 20px 0;
         }
         span {
             display: block;
@@ -290,44 +314,61 @@ hr {
     }
 
     .services {
-        margin-top: 45px;
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
         .service {
             img {
-                width: 80px;
+                width: 60px;
+                height: 60px;
             }
             p {
-                padding: 0 18px;
+                padding-left: 70px;
+                br {
+                    display: none;
+                }
             }
         }
     }
 
 }
 
-/* Small Devices, Phones */ 
-@media only screen and (max-width : 767px) {
 
-}
-
-/* Small Phones */ 
 @media only screen and (max-width : 479px) {
 
     #content {
 
     }
 
-    .container {
+    .center {
+        top: 30px;
+        transform: translateY(0);
+        -ms-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -webkit-transform: translateY(0);
+    }
 
+    .container {
+        padding: 0 0 40px 0;
     }
 
     h1 {
+        font-size: 35px;
         line-height: 33px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         span {
             top: 0;
+            text-align: center;
         }
     }
 
     h2 {
-        
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 19px;
     }
 
     p {
@@ -341,19 +382,16 @@ hr {
     }
 
     .services {
+        margin-top: 30px;
         .service {
-            width: 100%;
+            width: 280px;
+            margin: 0 auto;
+            float: none;
         }
     }
 
 }
 
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-
-}
-
-/* Retina */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
 
 }
