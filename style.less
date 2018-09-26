@@ -1,6 +1,6 @@
 /*!
     Barnetts Deniliquin
-    Version: 0.4
+    Version: 0.5
 */
 
 
@@ -137,25 +137,20 @@ hr {
 }   
 
 .delay-1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+.delay-2 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+.delay-3 {
     -webkit-animation-delay: 0.6s;
     animation-delay: 0.6s;
 }
-.delay-2 {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s;
-}
-.delay-3 {
-    -webkit-animation-delay: 1.8s;
-    animation-delay: 1.8s;
-}
 .delay-4 {
-    -webkit-animation-delay: 2.4s;
-    animation-delay: 2.4s;
-}
-
-.animated {
-    -webkit-animation-duration: 1.2s;
-    animation-duration: 1.2s;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 1s;
 }
 
 .clearfix:before,
@@ -176,9 +171,6 @@ hr {
     height: 100%;
     width: 100%;
     float: left;
-    a {
-        border-bottom: 1px solid @color-off-white;
-    }
 }
 
 .center {
@@ -203,8 +195,14 @@ hr {
 }
 
 .call-now {
+    display: block;
     background-color: @color-blue;
     width: 100%;
+    border: 0;
+    outline: 0;
+    &:hover {
+        background-color: lighten(@color-blue, 10%);
+    }
     p {
         font-size: 30px;
         line-height: 42px;
@@ -245,18 +243,7 @@ hr {
    Responsive
    -------------------------------------------------------------- */
 
-
-@media only screen and (max-width : 1199px) {
-
-}
-
-
-@media only screen and (max-width : 991px) {
-
-}
-
-
-@media only screen and (max-height : 740px) {
+@media (max-height: 740px) {
     .center {
         top: 60px;
         transform: translateY(0);
@@ -270,15 +257,7 @@ hr {
 }
 
 
-@media only screen and (max-width : 767px) {
-
-    #content {
-        
-    }
-
-    .center {
-        
-    }
+@media (max-width: 767px) {
 
     .container {
         max-width: 100%;
@@ -297,10 +276,6 @@ hr {
         font-size: 20px;
         line-height: 30px;
         margin-bottom: 30px;
-    }
-
-    p {
-        
     }
 
     .call-now {
@@ -335,11 +310,7 @@ hr {
 }
 
 
-@media only screen and (max-width : 479px) {
-
-    #content {
-
-    }
+@media (max-width: 479px) {
 
     .center {
         top: 30px;
@@ -372,10 +343,6 @@ hr {
         font-size: 19px;
     }
 
-    p {
-        
-    }
-
     .call-now {
         span {
             display: block;
@@ -392,8 +359,3 @@ hr {
     }
 
 }
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-
-}
-
